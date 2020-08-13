@@ -206,7 +206,7 @@ endif()
 if(ZLIB_BUILD_STATIC_LIBS)
   add_library(zlibstatic STATIC ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcmodel=medany")
-  SET(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -mcmodel=medany")
+  SET(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -mcmodel=medany -fno-builtin-print")
   set_target_properties(zlibstatic PROPERTIES LINK_FLAGS "-mcmodel=medany -T /home/amallery/chipyard/tests/link.ld -nostartfiles -lgcc")
 endif()
 
